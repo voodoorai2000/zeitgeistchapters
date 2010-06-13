@@ -14,7 +14,7 @@ pre {
 
 a { color: #000; }
 a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:hover {  }
 
 .fieldWithErrors {
   padding: 2px;
@@ -52,3 +52,14 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#menu {
+	text-align: center;
+	display: block;
+	padding-top: 30px;
+}
+
+#menu a{
+	font-size: 40px;
+	padding-left: 50px;
+	padding-right: 50px;
+}

@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => 'chapters'
   map.resources :chapters
 
   map.resources :coordinators
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
