@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @coordinator.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @coordinator.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @coordinator.phone %>
+</p>
+
+<p>
+  <b>Skype:</b>
+  <%=h @coordinator.skype %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @coordinator.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_coordinator_path(@coordinator) %> |
+<%= link_to 'Back', coordinators_path %>

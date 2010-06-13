@@ -1,0 +1,28 @@
+<h1>Listing coordinators</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Skype</th>
+    <th>Notes</th>
+  </tr>
+
+<% @coordinators.each do |coordinator| %>
+  <tr>
+    <td><%=h coordinator.name %></td>
+    <td><%=h coordinator.email %></td>
+    <td><%=h coordinator.phone %></td>
+    <td><%=h coordinator.skype %></td>
+    <td><%=h coordinator.notes %></td>
+    <td><%= link_to 'Show', coordinator %></td>
+    <td><%= link_to 'Edit', edit_coordinator_path(coordinator) %></td>
+    <td><%= link_to 'Destroy', coordinator, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New coordinator', new_coordinator_path %>
