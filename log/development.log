@@ -167,3 +167,21 @@ Rendering chapters/edit
   [4;36;1mCoordinator Load (0.6ms)[0m   [0;1mSELECT * FROM "coordinators" [0m
 Rendered chapters/_form (17.6ms)
 Completed in 43ms (View: 31, DB: 1) | 200 OK [http://localhost/chapters/1/edit]
+
+
+Processing ChaptersController#index (for 127.0.0.1 at 2010-06-13 21:53:29) [GET]
+  [4;35;1mChapter Load (0.7ms)[0m   [0mSELECT * FROM "chapters" [0m
+Rendering template within layouts/chapters
+Rendering chapters/index
+  [4;36;1mCoordinator Load (0.6ms)[0m   [0;1mSELECT * FROM "coordinators" WHERE ("coordinators"."id" = 1) [0m
+Completed in 40ms (View: 28, DB: 1) | 200 OK [http://localhost/chapters]
+
+
+Processing ChaptersController#edit (for 127.0.0.1 at 2010-06-13 21:53:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mChapter Load (0.4ms)[0m   [0mSELECT * FROM "chapters" WHERE ("chapters"."id" = 1) [0m
+Rendering template within layouts/chapters
+Rendering chapters/edit
+  [4;36;1mCoordinator Load (0.8ms)[0m   [0;1mSELECT * FROM "coordinators" [0m
+Rendered chapters/_form (17.4ms)
+Completed in 43ms (View: 29, DB: 1) | 200 OK [http://localhost/chapters/1/edit]
