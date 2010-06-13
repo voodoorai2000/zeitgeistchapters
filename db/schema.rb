@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100613194045) do
+ActiveRecord::Schema.define(:version => 20100613194547) do
+
+  create_table "chapters", :force => true do |t|
+    t.string   "website"
+    t.string   "status"
+    t.text     "notes"
+    t.integer  "coordinator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "coordinators", :force => true do |t|
     t.string   "name"

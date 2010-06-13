@@ -51,3 +51,119 @@ Processing CoordinatorsController#show (for 127.0.0.1 at 2010-06-13 21:41:13) [G
 Rendering template within layouts/coordinators
 Rendering coordinators/show
 Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/coordinators/1]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCoordinators (20100613194045)
+Migrating to CreateChapters (20100613194547)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "website" varchar(255), "status" varchar(255), "notes" text, "coordinator_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100613194547')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("chapters")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("coordinators")[0m
+
+
+Processing ChaptersController#index (for 127.0.0.1 at 2010-06-13 21:46:20) [GET]
+  [4;35;1mChapter Load (0.4ms)[0m   [0mSELECT * FROM "chapters" [0m
+Rendering template within layouts/chapters
+Rendering chapters/index
+Completed in 62ms (View: 16, DB: 0) | 200 OK [http://localhost/chapters]
+
+
+Processing ChaptersController#new (for 127.0.0.1 at 2010-06-13 21:46:22) [GET]
+Rendering template within layouts/chapters
+Rendering chapters/new
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/chapters/new]
+
+
+Processing ChaptersController#new (for 127.0.0.1 at 2010-06-13 21:48:19) [GET]
+Rendering template within layouts/chapters
+Rendering chapters/new
+  [4;36;1mCoordinator Load (0.6ms)[0m   [0;1mSELECT * FROM "coordinators" [0m
+Completed in 209ms (View: 196, DB: 1) | 200 OK [http://localhost/chapters/new]
+
+
+Processing ChaptersController#new (for 127.0.0.1 at 2010-06-13 21:48:37) [GET]
+Rendering template within layouts/chapters
+Rendering chapters/new
+  [4;35;1mCoordinator Load (0.5ms)[0m   [0mSELECT * FROM "coordinators" [0m
+Completed in 44ms (View: 30, DB: 1) | 200 OK [http://localhost/chapters/new]
+
+
+Processing ChaptersController#new (for 127.0.0.1 at 2010-06-13 21:49:18) [GET]
+Rendering template within layouts/chapters
+Rendering chapters/new
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x1036893c8>) on line #1 of app/views/chapters/_form.html.erb:
+1: <%= f.error_messages %>
+2: 
+3: <p>
+4:   <%= f.label :coordinator_id %><br />
+
+    app/views/chapters/_form.html.erb:1
+    app/views/chapters/new.html.erb:5
+    app/views/chapters/new.html.erb:3
+    app/controllers/chapters_controller.rb:29:in `new'
+
+Rendered rescues/_trace (178.5ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChaptersController#new (for 127.0.0.1 at 2010-06-13 21:49:58) [GET]
+Rendering template within layouts/chapters
+Rendering chapters/new
+  [4;36;1mCoordinator Load (0.8ms)[0m   [0;1mSELECT * FROM "coordinators" [0m
+Rendered chapters/_form (21.1ms)
+Completed in 51ms (View: 35, DB: 1) | 200 OK [http://localhost/chapters/new]
+
+
+Processing ChaptersController#new (for 127.0.0.1 at 2010-06-13 21:50:25) [GET]
+Rendering template within layouts/chapters
+Rendering chapters/new
+  [4;35;1mCoordinator Load (0.5ms)[0m   [0mSELECT * FROM "coordinators" [0m
+Rendered chapters/_form (15.8ms)
+Completed in 32ms (View: 21, DB: 1) | 200 OK [http://localhost/chapters/new]
+
+
+Processing ChaptersController#create (for 127.0.0.1 at 2010-06-13 21:50:37) [POST]
+  Parameters: {"commit"=>"Create", "chapter"=>{"notes"=>"asdf", "coordinator_id"=>"1", "website"=>"http://www.hello.com", "status"=>"open"}, "authenticity_token"=>"imTf7FJSHKYKU6ImNlz79YbQpjtDMknQBEyp+rnF/j8="}
+  [4;36;1mChapter Create (0.4ms)[0m   [0;1mINSERT INTO "chapters" ("created_at", "notes", "coordinator_id", "updated_at", "website", "status") VALUES('2010-06-13 19:50:37', 'asdf', 1, '2010-06-13 19:50:37', 'http://www.hello.com', 'open')[0m
+Redirected to http://localhost:3000/chapters/1
+Completed in 28ms (DB: 0) | 302 Found [http://localhost/chapters]
+
+
+Processing ChaptersController#show (for 127.0.0.1 at 2010-06-13 21:50:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mChapter Load (0.4ms)[0m   [0mSELECT * FROM "chapters" WHERE ("chapters"."id" = 1) [0m
+Rendering template within layouts/chapters
+Rendering chapters/show
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://localhost/chapters/1]
+
+
+Processing ChaptersController#index (for 127.0.0.1 at 2010-06-13 21:50:40) [GET]
+  [4;36;1mChapter Load (0.7ms)[0m   [0;1mSELECT * FROM "chapters" [0m
+Rendering template within layouts/chapters
+Rendering chapters/index
+Completed in 95ms (View: 13, DB: 1) | 200 OK [http://localhost/chapters]
+
+
+Processing ChaptersController#edit (for 127.0.0.1 at 2010-06-13 21:50:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mChapter Load (0.4ms)[0m   [0mSELECT * FROM "chapters" WHERE ("chapters"."id" = 1) [0m
+Rendering template within layouts/chapters
+Rendering chapters/edit
+  [4;36;1mCoordinator Load (0.6ms)[0m   [0;1mSELECT * FROM "coordinators" [0m
+Rendered chapters/_form (17.6ms)
+Completed in 43ms (View: 31, DB: 1) | 200 OK [http://localhost/chapters/1/edit]

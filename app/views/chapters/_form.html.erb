@@ -1,0 +1,19 @@
+<%= f.error_messages %>
+
+<p>
+  <%= f.label :coordinator_id %><br />
+  <%= f.select :coordinator_id, Coordinator.all.collect {|coordinator| [coordinator.name, coordinator.id]} %>
+</p>
+
+<p>
+  <%= f.label :website %><br />
+  <%= f.text_field :website %>
+</p>
+<p>
+  <%= f.label :status %><br />
+  <%= f.text_field :status %>
+</p>
+<p>
+  <%= f.label :notes %><br />
+  <%= f.text_area :notes %>
+</p>

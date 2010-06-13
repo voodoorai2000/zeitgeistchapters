@@ -1,0 +1,23 @@
+<p>
+  <b>Website:</b>
+  <%=h @chapter.website %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @chapter.status %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @chapter.notes %>
+</p>
+
+<p>
+  <b>Coordinator:</b>
+  <%=h @chapter.coordinator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+<%= link_to 'Back', chapters_path %>

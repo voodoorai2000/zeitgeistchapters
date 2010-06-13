@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  website: MyString
+  status: MyString
+  notes: MyText
+  coordinator_id: 1
+
+two:
+  website: MyString
+  status: MyString
+  notes: MyText
+  coordinator_id: 1
